@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>Thank you for submitting <span id="name"></span>'s loan application. An OTP has been sent to your email: <span id="email"></span>. Please enter the OTP below:</div>
+    <form id="nform">
+        <input type="number" name="iotp" id="iotp">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        let nform = document.querySelector("#nform");
+        nform.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent form submission
+            let oldotp = localStorage.getItem('Mainotp');
+            let notp = parseInt(document.querySelector('#iotp').value);
+            if (oldotp == notp) {
+                alert("All OK");
+            } else {
+                alert("Wrong OTP");
+            }
+        });
+
+        document.querySelector('#name').innerHTML = localStorage.getItem('name');
+        document.querySelector('#email').innerHTML = localStorage.getItem('email');
+    </script>
+    
+</body>
+</html>

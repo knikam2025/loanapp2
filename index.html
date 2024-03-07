@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loanapp">
+        <div>
+            <form id="lform">
+                <label for="name">Name</label>
+                <input type="text" placeholder="Enter Your Name" name="name" id="name" pattern="[a-zA-Z]){5,}" required><br><br>
+
+                <label for="email">Email</label>
+                <input type="email" placeholder="Enter Your Email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$ required><br><br>
+
+                <label for="pan">PAN Number</label>
+                <input type="text" placeholder="Enter Your PAN Number" name="pan" id="pan" pattern="[a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}" required><br><br>
+
+                <label for="loanamt">Loan Amount</label>
+                <input type="number" placeholder="Enter Loan Amount" name="loanamt" id="loanamt" required><br><br>
+
+                <div>
+                    <span id="calemi"></span><br><br>
+                    <button type="button" onclick="caliemi()">Calculate EMI</button><br><br>
+                </div>
+
+                <button type="submit">Submit Loan Application</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
